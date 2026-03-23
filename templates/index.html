@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VakeelAI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 🔴 SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <!-- ✅ BIGGER LOGO -->
+            <img src="/static/logo.png" alt="VakeelAI Logo" style="width:70px; height:70px;">
+            <h2>VakeelAI</h2>
+        </div>
+
+        <h3>Chats</h3>
+        <button onclick="newChat()">+ New Chat</button>
+        <div id="history"></div>
+    </div>
+
+    <!-- 🔴 CHAT AREA -->
+    <div class="chat">
+
+        <!-- 🔥 WELCOME SCREEN -->
+        <div id="welcomeScreen" class="welcome">
+            <h1>⚖️ Welcome to VakeelAI</h1>
+            <p>Your Smart Legal Assistant</p>
+        </div>
+
+        <!-- 🔹 MESSAGES -->
+        <div id="messages"></div>
+
+        <!-- 🔹 INPUT BAR -->
+        <div class="input-area">
+
+            <!-- 🌐 Language Selector (moved here ✅) -->
+        <div class="glass-box">
+     
+            <select id="language" style="
+                margin-right:10px;
+                padding:8px;
+                border-radius:6px;
+            ">
+                <option value="auto">🌐 Auto</option>
+                <option value="en">English</option>
+                <option value="ml">Malayalam</option>
+                <option value="hi">Hindi</option>
+                <option value="ta">Tamil</option>
+            </select>
+        </div>
+            <input
+                id="userInput"
+                type="text"
+                placeholder="Ask legal question..."
+                onkeypress="if(event.key==='Enter') sendMessage()"
+            />
+
+            <button onclick="startVoice()" class="mic-btn">🎤</button>
+            <button onclick="sendMessage()" class="send-btn">➤</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
